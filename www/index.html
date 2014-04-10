@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" type="text/css" href="js/libs/twitter-bootstrap/css/bootstrap.css" />
+        <script type="text/javascript" src="js/libs/angular.js/angular.js"></script>
+        <script type="text/javascript" src="js/controllers.js"></script>
+
+        <title>Hello World</title>
+        <style>
+            body {
+                font-size: 15pt;
+            }
+
+            .with-padding {
+                padding-bottom: 5px;
+                padding-left: 100px;
+            }
+
+            .header { background-color: black; color: white; text-align: center; font-size: 21pt; }
+
+            .DocumentList {
+                overflow-x:scroll;
+                overflow-y:hidden;
+                width:100%;
+                padding: 0 15px;
+            }
+
+            .DocumentItem {
+                padding:0;
+            }
+
+            .list-inline {
+                white-space:nowrap;
+            }
+        </style>
+    </head>
+    <body class="container-fluid" ng-app ng-controller="MainCtrl">
+
+        <div class="row">
+            <div class="col-xs-12 header">
+                <a href="#" ng-click="resetButtons()">R</a>&nbsp;Sudoku Solver
+            </div>
+        </div>
+
+        <div class="row">
+            Target
+            <div class="DocumentList">
+                <ul class="list-inline">
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">1</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">2</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">3</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">4</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">5</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">6</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">7</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">8</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">9</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">10</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">11</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">12</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">13</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">14</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">15</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">16</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">17</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">18</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">19</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">20</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">21</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">22</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">23</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">24</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">25</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">26</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">27</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">28</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">29</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">30</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">31</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">32</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">33</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">34</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">35</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">36</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">37</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">38</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">39</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">40</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">41</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">42</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">43</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">44</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">45</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            Places
+            <div class="DocumentList">
+                <ul class="list-inline">
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">1</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">2</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">3</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">4</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">5</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">6</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">7</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">8</button></li>
+                    <li class="DocumentItem"><button type="button" class="btn btn-default">9</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <form>
+                <br/>
+                <div class="row with-padding col-xs-12">
+                    <div>
+                        <button type="button" ng-click="changeButtonStatus(0)" ng-class="{'btn-success': buttonStatus[0] === 0, 'btn-danger': buttonStatus[0] === 1, 'btn-default': buttonStatus[0] === 2}" class="btn btn-lg">1</button>
+                        <button type="button" ng-click="changeButtonStatus(1)" ng-class="{'btn-success': buttonStatus[1] === 0, 'btn-danger': buttonStatus[1] === 1, 'btn-default': buttonStatus[1] === 2}" class="btn btn-lg">2</button>
+                        <button type="button" ng-click="changeButtonStatus(2)" ng-class="{'btn-success': buttonStatus[2] === 0, 'btn-danger': buttonStatus[2] === 1, 'btn-default': buttonStatus[2] === 2}" class="btn btn-lg">3</button>
+                    </div>
+                </div>
+
+                <div class="row with-padding col-xs-12">
+                    <button type="button" ng-click="changeButtonStatus(3)" ng-class="{'btn-success': buttonStatus[3] === 0, 'btn-danger': buttonStatus[3] === 1, 'btn-default': buttonStatus[3] === 2}" class="btn btn-lg">4</button>
+                    <button type="button" ng-click="changeButtonStatus(4)" ng-class="{'btn-success': buttonStatus[4] === 0, 'btn-danger': buttonStatus[4] === 1, 'btn-default': buttonStatus[4] === 2}" class="btn btn-lg">5</button>
+                    <button type="button" ng-click="changeButtonStatus(5)" ng-class="{'btn-success': buttonStatus[5] === 0, 'btn-danger': buttonStatus[5] === 1, 'btn-default': buttonStatus[5] === 2}" class="btn btn-lg">6</button>
+                </div>
+
+                <div class="row with-padding col-xs-12">
+                    <button type="button" ng-click="changeButtonStatus(6)" ng-class="{'btn-success': buttonStatus[6] === 0, 'btn-danger': buttonStatus[6] === 1, 'btn-default': buttonStatus[6] === 2}" class="btn btn-lg">7</button>
+                    <button type="button" ng-click="changeButtonStatus(7)" ng-class="{'btn-success': buttonStatus[7] === 0, 'btn-danger': buttonStatus[7] === 1, 'btn-default': buttonStatus[7] === 2}" class="btn btn-lg">8</button>
+                    <button type="button" ng-click="changeButtonStatus(8)" ng-class="{'btn-success': buttonStatus[8] === 0, 'btn-danger': buttonStatus[8] === 1, 'btn-default': buttonStatus[8] === 2}" class="btn btn-lg">9</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-xs-6" >
+                <button style="float:right" type="button" class="btn">Go</button>
+            </div>
+            <div class="col-xs-6">
+                <button  type="button" class="btn">Reset</button>
+            </div>
+        </div>
+    </body>
+</html>
