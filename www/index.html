@@ -7,6 +7,7 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" type="text/css" href="js/libs/twitter-bootstrap/css/bootstrap.css" />
         <script type="text/javascript" src="js/libs/angular.js/angular.js"></script>
+        <script type="text/javascript" src="js/sudoku.js"></script>
         <script type="text/javascript" src="js/controllers.js"></script>
 
         <title>Hello World</title>
@@ -140,7 +141,7 @@
         </div>
         <div class="row">
             <div class="col-xs-6" >
-                <button style="float:right" type="button" class="btn">Go</button>
+                <button ng-click="getResults()" style="float:right" type="button" class="btn">Go</button>
             </div>
             <div class="col-xs-6">
                 <button  type="button" class="btn">Reset</button>

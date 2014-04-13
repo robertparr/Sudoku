@@ -6,20 +6,12 @@ var permutate = (function() {
     function doPermute(input, output, used, places, level) {        
             
         if (places === level) {
-            //output.filter(onlyUnique()).length === output.length && 
-            console.log("Before unique "+output[1]);
-            console.log("Unique: "+output.filter(onlyUnique()));
-            if (sum(output) === target){
-                console.log("output="+output+", results="+results);
+            if (output.unique().length === output.length && sum(output) === target){
                 var sortedArray = output.sort().slice(0);
- 
                 if (!contains(results, sortedArray)) {
-                    console.log("Adding "+sortedArray);
                     results.push(sortedArray);
-                }
-                
-            }
-            
+                }                
+            }            
             return;
         } 
         
@@ -35,21 +27,20 @@ var permutate = (function() {
             output.push(input[i]);
             doPermute(input, output, used, places, level);
             used[i] = false;
-            //console.log("before pop: "+output);
             output.pop();
-            //console.log("after pop: "+output);
         }
     }
     function arrays_equal(a,b) { return !(a<b || b<a); };
     
-    function onlyUnique(value, index, self) { 
-        return self.indexOf(value) === index;
-    }
+    Array.prototype.unique = function() {
+    var o = {}, i, l = this.length, r = [];
+    for(i=0; i<l;i+=1) o[this[i]] = this[i];
+    for(i in o) r.push(o[i]);
+    return r;
+};
     
     function contains(completeArray, arrayToFind) {
-        //console.log("in contains %s %s", completeArray, arrayToFind);
         for (var a=0;a<completeArray.length;a++) {
-            console.log("comparing %s to %s %s", completeArray[a], arrayToFind, (arrays_equal(completeArray[a], arrayToFind)));   
             if (arrays_equal(completeArray[a], arrayToFind)) {
                 return true;
             }
@@ -78,10 +69,3 @@ var permutate = (function() {
         }
     };
 })();
-
-//var target=3, places=2;
-//var testResults = permutate.getPermutations(target, places);
- 
-
-
-

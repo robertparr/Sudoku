@@ -11,6 +11,11 @@ var CAN=2;
     $scope.resetButtons = function() {
         $scope.buttonStatus = [CAN, CAN, CAN, CAN, CAN, CAN, CAN, CAN, CAN];
     };
+    
+    $scope.getResults = function() {
+        var testResults = permutate.getPermutations(8, 3);
+        alert(testResults.length);
+    };
 };
 
 
