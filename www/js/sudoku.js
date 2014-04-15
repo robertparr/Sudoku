@@ -58,13 +58,15 @@ var permutate = (function() {
     
     return {
         getPermutations: function(t, places) {
-            
+            console.log("** Results: %s", results);
             target=t;
+	    results = [];
             var chars = [1,2,3,4,5,6,7,8,9];
             var output = [];
             var used = new Array(chars.length);      
 
-            doPermute(chars, output, used, places, 0);        
+            doPermute(chars, output, used, places, 0);   
+	    console.log("** Results: %s", results);
             return results;    
         }
     };

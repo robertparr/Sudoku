@@ -2,11 +2,15 @@
 
 describe('Sudoku App', function() {
 
-    it('should redirect index.html to index.html#/phones', function() {
-        var target=6, places=3;
-        var testResults = permutate.getPermutations(target, places);
-      
-        console.log(testResults);
+    it('test2', function() {
+	var testResults = permutate.getPermutations(8, 3);
+	console.log(testResults);
+        expect(testResults.length).toBe(2);
+    });
+  
+    it('test1', function() {
+	var testResults = permutate.getPermutations(6, 3);
+	console.log(testResults);
         expect(testResults.length).toBe(1);
     });
 });
